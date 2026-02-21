@@ -266,7 +266,8 @@ function readServiceKeywords_(ss) {
       continue;
     }
     if (inSection) {
-      if (cell === '' || cell.indexOf('---') === 0) break;
+      if (cell.indexOf('---') === 0) break;
+      if (cell === '' || cell.charAt(0) === '(' || cell.charAt(0) === '（') continue;
       keywords.push(cell);
     }
   }
@@ -921,7 +922,6 @@ function createSettingsSheet() {
     ['ウォータージェット'],
     ['加工'],
     ['切断'],
-    [''],
     ['---'],
     [''],
     ['※ 上記のキーワードは「地域×サービス」マトリクス分析で使用されます。'],
